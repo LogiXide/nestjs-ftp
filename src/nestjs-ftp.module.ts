@@ -5,7 +5,6 @@ import { IFtpConnectionOptions } from './interfaces/ftp.interface';
 
 @Module({})
 export class FtpModule {
-
   static forRootFtpAsync(options: IFtpConnectionOptions): DynamicModule {
     return {
       module: FtpModule,
@@ -15,7 +14,7 @@ export class FtpModule {
           useFactory: options.useFactory,
           inject: options.inject || [],
         },
-        FtpService
+        FtpService,
       ],
       exports: [FtpService],
     };
